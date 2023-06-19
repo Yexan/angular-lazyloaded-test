@@ -11,10 +11,6 @@ export class PreviewComponent extends FrontComponent {
 
   constructor(private productStatePreview: ProductStateService) {
     super(productStatePreview);
+    this.setProductName('Preview');
   }
-
-  override setModuleName() {
-    this.moduleName = 'preview';
-  }
-
 }

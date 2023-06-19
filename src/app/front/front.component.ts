@@ -7,11 +7,9 @@ import { ProductStateService } from './product-state.service';
   styleUrls: ['./front.component.sass']
 })
 export class FrontComponent {
-  moduleName: string = ''
 
   constructor(private productState: ProductStateService) {
-    this.setModuleName();
-    this.logModuleName();
+    this.setProductName('Front');
   }
 
   get productName() {
@@ -20,12 +18,5 @@ export class FrontComponent {
 
   setProductName(newName: string) {
     this.productState.productName = newName;
-  }
-
-  setModuleName() {
-    this.moduleName = 'front';
-  }
-  logModuleName() {
-    console.log(this.moduleName);
   }
 }

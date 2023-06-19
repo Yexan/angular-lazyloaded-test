@@ -11,10 +11,6 @@ export class PoweruserComponent extends FrontComponent {
 
   constructor(private productStatePU: ProductStateService) {
     super(productStatePU);
+    this.setProductName('Poweruser');
   }
-
-  override setModuleName() {
-    this.moduleName = 'poweruser';
-  }
-
 }
