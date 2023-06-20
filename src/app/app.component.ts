@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,11 +6,16 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'rm-card';
 
-  constructor(private router: Router) {
+  @Input() mode: string = '';
 
-    this.router.navigate(['/poweruser', {}]);
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    if (this.mode) {
+      this.router.navigate([`/${ this.mode }`, {}]);
+    }
   }
 }
