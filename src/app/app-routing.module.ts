@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'front',
+    loadChildren: () => import('./front/front.module').then(m => m.FrontModule)
+  },
+  {
     path: 'poweruser',
     loadChildren: () => import('./poweruser/poweruser.module').then(m => m.PoweruserModule)
   },
@@ -11,12 +15,8 @@ const routes: Routes = [
     loadChildren: () => import('./preview/preview.module').then(m => m.PreviewModule)
   },
   {
-    path: '',
-    loadChildren: () => import('./front/front.module').then(m => m.FrontModule)
-  },
-  {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'front',
     pathMatch: 'full'
   }
 ];
