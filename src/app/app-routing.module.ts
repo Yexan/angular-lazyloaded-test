@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'front',
+    redirectTo: '',
     loadChildren: () => import('./front/front.module').then(m => m.FrontModule)
   },
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'front',
     pathMatch: 'full'
   }
 ];
