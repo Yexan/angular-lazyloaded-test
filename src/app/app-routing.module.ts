@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'front',
-    redirectTo: '',
+    redirectTo: '/',
     loadChildren: () => import('./front/front.module').then(m => m.FrontModule)
   },
   {
